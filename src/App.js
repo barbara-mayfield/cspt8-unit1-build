@@ -1,4 +1,6 @@
 import React from "react";
+import Board from "./components/Board/Board";
+import About from "./components/About";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -9,12 +11,8 @@ function App() {
                 <h1>Conway's Game of Life</h1>
             </div>
             <div className="main">
-                <section className="game">
-                    <h2>Game Board</h2>
-                </section>
-                <section className="about">
-                    <h2>About this Algorithm &gt; &gt;</h2>
-                </section>
+                <Board />
+                <About />
             </div>
             <div className="App-footer">
                 <img src={logo} className="App-logo" alt="React logo" />
