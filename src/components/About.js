@@ -5,42 +5,60 @@ export default function About() {
         <div className="About">
             <h2>About this Algorithm &gt;</h2>
             <p>
-                I'm baby ennui chambray kogi everyday carry twee four dollar
-                toast deep v activated charcoal flannel. DIY farm-to-table
-                occupy, slow-carb succulents trust fund brooklyn chillwave. YOLO
-                church-key iPhone pop-up tousled put a bird on it, shaman paleo
-                typewriter air plant jianbing blue bottle art party raw denim.
-                Meggings vice cray locavore crucifix snackwave typewriter yuccie
-                kombucha authentic jianbing. Literally whatever quinoa locavore
-                knausgaard celiac readymade kickstarter hot chicken adaptogen
-                etsy austin.
+                The universe of the Game of Life is an infinite, two-dimensional
+                orthogonal grid of square cells, each of which is in one of two
+                possible states, live or dead, (or populated and unpopulated,
+                respectively). Every cell interacts with its eight neighbours,
+                which are the cells that are horizontally, vertically, or
+                diagonally adjacent.
             </p>
 
-            <p>
-                Lyft VHS raclette, single-origin coffee fingerstache microdosing
-                humblebrag yuccie meggings neutra activated charcoal. Four loko
-                tattooed paleo succulents wolf chartreuse air plant occupy
-                forage kitsch palo santo blue bottle. Microdosing scenester
-                authentic flexitarian, ramps pug fingerstache shabby chic kogi
-                blog cliche fashion axe helvetica forage photo booth. Banjo
-                meggings bushwick gluten-free. Before they sold out irony small
-                batch cold-pressed, viral organic chicharrones lumbersexual
-                cornhole pour-over mumblecore pickled pitchfork crucifix. Woke
-                retro blog gastropub enamel pin. Poke before they sold out
-                jianbing lo-fi iceland, hella umami photo booth 8-bit.
-            </p>
+            <h4>At each step in time, the following transitions occur:</h4>
+            <ol>
+                <li>
+                    Any live cell with fewer than two live neighbours dies, as
+                    if by underpopulation.
+                </li>
+                <li>
+                    Any live cell with two or three live neighbours lives on to
+                    the next generation.{" "}
+                </li>
+                <li>
+                    Any live cell with more than three live neighbours dies, as
+                    if by overpopulation.
+                </li>
+                <li>
+                    Any dead cell with exactly three live neighbours becomes a
+                    live cell, as if by reproduction.
+                </li>
+            </ol>
+
+            <h4>
+                These rules, which compare the behavior of the automaton to real
+                life, can be condensed into the following:
+            </h4>
+            <ol>
+                <li>
+                    Any live cell with two or three live neighbours survives.
+                </li>
+                <li>
+                    Any dead cell with three live neighbours becomes a live
+                    cell.
+                </li>
+                <li>
+                    All other live cells die in the next generation. Similarly,
+                    all other dead cells stay dead.
+                </li>
+            </ol>
 
             <p>
-                3 wolf moon truffaut deep v, synth 90's marfa normcore yr
-                microdosing. Activated charcoal church-key drinking vinegar,
-                salvia hell of palo santo wolf retro flannel vegan food truck
-                deep v quinoa pickled literally. Tumblr organic kitsch cardigan
-                ramps tbh. Church-key green juice raw denim truffaut tattooed
-                hammock. Taxidermy cardigan chambray glossier kogi 90's
-                flexitarian chillwave cronut pok pok shoreditch ethical
-                skateboard retro post-ironic. Mustache microdosing ethical blue
-                bottle tousled cred. Squid pok pok gluten-free, helvetica palo
-                santo photo booth forage kitsch yr tilde.
+                The initial pattern constitutes the seed of the system. The
+                first generation is created by applying the above rules
+                simultaneously to every cell in the seed; births and deaths
+                occur simultaneously, and the discrete moment at which this
+                happens is sometimes called a tick. Each generation is a pure
+                function of the preceding one. The rules continue to be applied
+                repeatedly to create further generations.
             </p>
         </div>
     );

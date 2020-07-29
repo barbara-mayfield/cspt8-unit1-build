@@ -1,6 +1,6 @@
 .Board {
     margin: 0 auto;
-    background-color: #000;
+    background-color: black;
     border: solid 1px #fff;
     display: grid;
 
