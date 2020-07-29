@@ -8,8 +8,12 @@ const numCols = 25;
 
 // we call generate grid in our useState hook
 const generateGrid = () => {
+    // using this 1D array
     const rows = [];
+
+    // we can loop over it to create a 2D array
     for (let i = 0; i < numRows; i++) {
+        // this generates a 2D array full of zeroes
         rows.push(Array.from(Array(numCols), () => 0));
     }
 
@@ -42,6 +46,8 @@ const GameBoard = () => {
     const [isRunning, setRunning] = useState(false);
     const [generation, setGen] = useState(0);
 
+    // Since we are only calling "startGame" once, we need
+    // a way to access the updating state of our grid.
     // useRef hook is handy for keeping any mutable value
     // around similar to how you’d use instance fields
     // in classes. We store the state in here so we can
@@ -49,20 +55,29 @@ const GameBoard = () => {
     const isRunningRef = useRef(isRunning);
     isRunningRef.current = isRunning;
 
+    const generateRandom = () => {
+        const rows = [];
+        for (let i = 0; i < numRows; i++) {
+            rows.push(
+                Array.from(Array(numCols), () => (Math.random() > 0.7 ? 1 : 0))
+            );
+        }
+
+        setGrid(rows);
+    };
+
     const startGame = useCallback(() => {
         // This is the main game loop that will run recursively
 
         // Kill condition, checks to see if we are currently running or not
+        // If we aren't running, it kills the function.
         if (!isRunningRef.current) {
             return;
         } else {
+            // This will increment the generation count as the game is running.
             setGen((prevState) => (prevState += 1));
 
-            // So now we need to simulate while implementing our rules
-            // 1. Any live cell with fewer than 2 live neibhors dies.
-            // 2. They also die if they have more than 3 neighbors.
-            // 3. If they have 2 or 3 live neighbors they remain alive.
-            // 4. If a dead cells have 3 neighbors it becomes alive.
+            // So now we need to simulate while implementing our game rules
             setGrid((g) => {
                 return produce(g, (gridCopy) => {
                     for (let i = 0; i < numRows; i++) {
@@ -72,7 +87,7 @@ const GameBoard = () => {
                                 const newI = i + x;
                                 const newJ = j + y;
 
-                                // this is whether or not we are out of bounds
+                                // this is to check whether or not we are out of bounds
                                 if (
                                     newI >= 0 &&
                                     newI < numRows &&
@@ -84,11 +99,13 @@ const GameBoard = () => {
                                 }
                             });
 
-                            // if neighbors are less than two or greater than 3, set to dead (0)
+                            // 1. Any live cell with fewer than 2 live neibhors dies.
+                            // 2. They also die if they have greater than 3 neighbors.
                             if (neighbors < 2 || neighbors > 3) {
                                 gridCopy[i][j] = 0;
-                                // elif the cell in position is dead and has 3 neighbors, set to alive (1)
-                                // every time a new generation occurs, add 1 to generation counter
+
+                                // 3. If they have 2 or 3 live neighbors they remain alive.
+                                // 4. If a dead cells have 3 neighbors it becomes alive.
                             } else if (g[i][j] === 0 && neighbors === 3) {
                                 gridCopy[i][j] = 1;
                             }
@@ -167,6 +184,9 @@ const GameBoard = () => {
                     }}
                 >
                     {isRunning ? "Stop" : "Start"}
+                </button>
+                <button className="random" onClick={() => generateRandom()}>
+                    Random
                 </button>
                 <button
                     className="reset-button"
