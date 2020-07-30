@@ -208,14 +208,13 @@ const GameBoard = () => {
                 >
                     Reset
                 </button>
-            </div>
-
-            <div className="speed-controls">
-                <h5>Change Speed</h5>
-                <button onClick={gameSpeed(startGame, 1200)}>1</button>
-                <button onClick={gameSpeed(startGame, 1000)}>2</button>
-                <button onClick={gameSpeed(startGame, 750)}>3</button>
-                <button onClick={gameSpeed(startGame, 500)}>4</button>
+                <div className="speed-controls">
+                    <button onClick={gameSpeed(startGame, 1200)}>1</button>
+                    <button onClick={gameSpeed(startGame, 1000)}>2</button>
+                    <button onClick={gameSpeed(startGame, 750)}>3</button>
+                    <button onClick={gameSpeed(startGame, 500)}>4</button>
+                    <h5>Change Speed</h5>
+                </div>
             </div>
         </div>
     );
