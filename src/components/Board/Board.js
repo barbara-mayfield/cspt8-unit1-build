@@ -114,12 +114,22 @@ const GameBoard = () => {
                 });
             });
 
-            setTimeout(startGame, 500);
+            setTimeout(startGame, 1200);
         }
     }, []);
 
+    const gameSpeed = (func, seconds) => {
+        if (isRunningRef.current) {
+            clearTimeout();
+            setTimeout(func, seconds);
+        }
+    };
+
     return (
         <div className="Game">
+            <div>
+                <h5>Generation: {generation}</h5>
+            </div>
             <div
                 className="Board"
                 style={{
@@ -172,7 +182,7 @@ const GameBoard = () => {
                     )
                 }
             </div>
-            <div className="controls">
+            <div className="game-controls">
                 <button
                     className="s-button"
                     onClick={() => {
@@ -193,14 +203,19 @@ const GameBoard = () => {
                     onClick={() => {
                         setGrid(generateGrid());
                         setGen(0);
+                        setRunning(false);
                     }}
                 >
                     Reset
                 </button>
             </div>
 
-            <div>
-                <h5>Generation: {generation}</h5>
+            <div className="speed-controls">
+                <h5>Change Speed</h5>
+                <button onClick={gameSpeed(startGame, 1200)}>1</button>
+                <button onClick={gameSpeed(startGame, 1000)}>2</button>
+                <button onClick={gameSpeed(startGame, 750)}>3</button>
+                <button onClick={gameSpeed(startGame, 500)}>4</button>
             </div>
         </div>
     );

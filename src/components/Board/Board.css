@@ -6,3 +6,20 @@
 
     width: 39.08rem;
 }
+
+.Game {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .game-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.speed-controls {
+    margin: 0 auto;
+    margin-left: 1rem;
+} */
