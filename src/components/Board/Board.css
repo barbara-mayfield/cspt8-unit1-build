@@ -3,6 +3,16 @@
     background-color: black;
     border: solid 1px #fff;
     display: grid;
+}
 
-    width: 39.08rem;
+.Game {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-controls {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

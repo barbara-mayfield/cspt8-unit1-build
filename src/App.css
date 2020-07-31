@@ -38,8 +38,30 @@
     }
 }
 
-.About {
+.App-footer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.collapsible {
+    background-color: #111316;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 0.4rem;
+    border: 2px solid palevioletred;
+    cursor: pointer;
+}
+
+.collapsible .content {
     margin: 100px;
     margin-top: 0px;
     text-align: left;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
 }
