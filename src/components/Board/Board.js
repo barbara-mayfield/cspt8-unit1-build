@@ -1,6 +1,18 @@
 import React, { useState, useCallback, useRef } from "react";
+import styled from "styled-components";
 import "./Board.css";
 import produce from "immer";
+
+const Button = styled.button`
+    background: ${(props) => (props.primary ? "white" : "#4a515f")};
+    color: ${(props) => (props.primary ? "#4a515f" : "white")};
+
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+`;
 
 // Set initial numbers of rows and columns
 const numRows = 25;
@@ -113,16 +125,13 @@ const GameBoard = () => {
                     }
                 });
             });
-
-            setTimeout(startGame, 1200);
         }
+        setTimeout(startGame, 1200);
     }, []);
 
-    const gameSpeed = (func, seconds) => {
-        if (isRunningRef.current) {
-            clearTimeout();
-            setTimeout(func, seconds);
-        }
+    const gameSpeed = (func, second) => {
+        clearTimeout();
+        setTimeout(func, second);
     };
 
     return (
@@ -183,7 +192,7 @@ const GameBoard = () => {
                 }
             </div>
             <div className="game-controls">
-                <button
+                <Button
                     className="s-button"
                     onClick={() => {
                         setRunning(!isRunning);
@@ -194,11 +203,11 @@ const GameBoard = () => {
                     }}
                 >
                     {isRunning ? "Stop" : "Start"}
-                </button>
-                <button className="random" onClick={() => generateRandom()}>
+                </Button>
+                <Button className="random" onClick={() => generateRandom()}>
                     Random
-                </button>
-                <button
+                </Button>
+                <Button
                     className="reset-button"
                     onClick={() => {
                         setGrid(generateGrid());
@@ -207,14 +216,10 @@ const GameBoard = () => {
                     }}
                 >
                     Reset
-                </button>
-                <div className="speed-controls">
-                    <button onClick={gameSpeed(startGame, 1200)}>1</button>
-                    <button onClick={gameSpeed(startGame, 1000)}>2</button>
-                    <button onClick={gameSpeed(startGame, 750)}>3</button>
-                    <button onClick={gameSpeed(startGame, 500)}>4</button>
-                    <h5>Change Speed</h5>
-                </div>
+                </Button>
+                <Button onClick={() => gameSpeed(startGame, 1000)}>
+                    Speed It Up!
+                </Button>
             </div>
         </div>
     );

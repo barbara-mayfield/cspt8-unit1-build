@@ -11,26 +11,8 @@
 }
 
 .game-controls {
-    text-align: left;
-    margin: 0 auto;
-    margin-left: 21rem;
-    margin-right: 0;
+    text-align: center;
     display: flex;
     align-items: center;
-}
-
-.speed-controls {
-    margin-left: 77px;
-    margin-bottom: 9.8px;
-    margin-top: 25px;
-}
-
-.speed-controls button {
-    margin-left: 2px;
-    width: 20%;
-}
-
-.speed-controls h5 {
-    margin: 0;
-    margin-right: 22px;
+    justify-content: space-evenly;
 }
