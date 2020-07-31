@@ -49,6 +49,7 @@
     margin: 0 auto;
     border-radius: 0.4rem;
     border: 2px solid palevioletred;
+    cursor: pointer;
 }
 
 .collapsible .content {
