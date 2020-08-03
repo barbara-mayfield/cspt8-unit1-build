@@ -78,6 +78,23 @@ const GameBoard = () => {
         setGrid(rows);
     };
 
+    const randomColor = () => {
+        //function name
+        var color = "#"; // hexadecimal starting symbol
+        var letters = [
+            "e042f5",
+            "4251f5",
+            "42f2f5",
+            "42f566",
+            "ecf542",
+            "f5a142",
+            "f54242",
+            "9700b5",
+        ];
+        color += letters[Math.floor(Math.random() * letters.length)];
+        return color;
+    };
+
     const startGame = useCallback(() => {
         // This is the main game loop that will run recursively
 
@@ -183,7 +200,7 @@ const GameBoard = () => {
                                     width: 25,
                                     border: "1px solid white",
                                     backgroundColor: grid[i][j]
-                                        ? "palevioletred"
+                                        ? randomColor()
                                         : undefined,
                                 }}
                             ></div>

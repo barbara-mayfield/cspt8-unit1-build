@@ -6,7 +6,7 @@ export default function About() {
             <div type="button" className="collapsible">
                 <h2>About this Algorithm &gt;</h2>
             </div>
-            <div class="content">
+            <div className="content">
                 <p>
                     The universe of the Game of Life is an infinite,
                     two-dimensional orthogonal grid of square cells, each of
