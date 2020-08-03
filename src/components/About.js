@@ -64,6 +64,14 @@ export default function About() {
                     pure function of the preceding one. The rules continue to be
                     applied repeatedly to create further generations.
                 </p>
+
+                <a
+                    href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    Read more here.
+                </a>
             </div>
         </div>
     );
