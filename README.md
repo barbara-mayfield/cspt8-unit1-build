@@ -13,4 +13,14 @@ Welcome to John Conway's "Game of Life"! This is a computer science classic from
 -   Student should be able to implement a visualization of Conway’s “Game of Life” using technologies related to their specific track.
 -   Student should be able to utilize "double buffering" to implement the game
 
+## Game Features & How to Play
+
+-   Click on any of the grid squares to indicate a live cell with a random color.
+
+![example-patterns](https://media.giphy.com/media/4VVZTvTqzRR0BUwNIH/giphy.gif)
+
+-   Click the Start button and the game will begin and go through the generations of cells.
+-   Stop will pause the game. Reset will clear the board.
+-   Speed up will speed up your game!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
